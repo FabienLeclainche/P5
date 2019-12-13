@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 13 déc. 2019 à 15:43
+-- Généré le :  ven. 13 déc. 2019 à 18:41
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -56,6 +56,9 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `budget` varchar(255) NOT NULL,
+  `niveau` varchar(255) NOT NULL,
+  `saison` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -63,9 +66,9 @@ CREATE TABLE IF NOT EXISTS `customers` (
 -- Déchargement des données de la table `customers`
 --
 
-INSERT INTO `customers` (`id`, `prenom`, `nom`, `email`) VALUES
-(2, 'fab', 'le', 'a@gmail.com'),
-(3, 'Robert', 'dupont', 'r@outlook.r');
+INSERT INTO `customers` (`id`, `prenom`, `nom`, `email`, `budget`, `niveau`, `saison`) VALUES
+(2, 'fab', 'le', 'a@gmail.com', '', '', ''),
+(3, 'Robert', 'dupont', 'r@outlook.r', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -153,6 +156,156 @@ INSERT INTO `spots` (`id`, `localisation`, `latitude`, `longitude`) VALUES
 (11, 'Maroc', '30.5453374', '-9.708985799999936'),
 (12, 'Portugal', '38.9664933', '-9.417616899999984'),
 (13, 'Sri Lanka', '5.964726199999999', '80.39086109999994');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spots_budgets`
+--
+
+DROP TABLE IF EXISTS `spots_budgets`;
+CREATE TABLE IF NOT EXISTS `spots_budgets` (
+  `spots_id` varchar(255) NOT NULL,
+  `budgets_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `spots_budgets`
+--
+
+INSERT INTO `spots_budgets` (`spots_id`, `budgets_id`) VALUES
+('1', '1'),
+('2', '3'),
+('3', '3'),
+('4', '2'),
+('5', '1'),
+('6', '2'),
+('6', '3'),
+('7', '1'),
+('8', '2'),
+('9', '2'),
+('10', '2'),
+('11', '1'),
+('12', '2'),
+('13', '1'),
+('13', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spots_niveaux`
+--
+
+DROP TABLE IF EXISTS `spots_niveaux`;
+CREATE TABLE IF NOT EXISTS `spots_niveaux` (
+  `spots_id` varchar(255) NOT NULL,
+  `niveaux_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `spots_niveaux`
+--
+
+INSERT INTO `spots_niveaux` (`spots_id`, `niveaux_id`) VALUES
+('1', '2'),
+('1', '3'),
+('2', '1'),
+('2', '2'),
+('2', '3'),
+('3', '3'),
+('4', '1'),
+('4', '2'),
+('5', '2'),
+('6', '1'),
+('6', '2'),
+('7', '2'),
+('7', '3'),
+('8', '2'),
+('8', '3'),
+('9', '3'),
+('10', '2'),
+('10', '3'),
+('11', '1'),
+('11', '2'),
+('12', '1'),
+('12', '2'),
+('12', '3'),
+('13', '1'),
+('13', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spots_saisons`
+--
+
+DROP TABLE IF EXISTS `spots_saisons`;
+CREATE TABLE IF NOT EXISTS `spots_saisons` (
+  `spots_id` varchar(255) NOT NULL,
+  `saisons_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `spots_saisons`
+--
+
+INSERT INTO `spots_saisons` (`spots_id`, `saisons_id`) VALUES
+('1', '4'),
+('1', '5'),
+('1', '6'),
+('1', '7'),
+('1', '8'),
+('1', '9'),
+('1', '10'),
+('2', '1'),
+('2', '2'),
+('2', '3'),
+('2', '12'),
+('3', '1'),
+('3', '2'),
+('3', '11'),
+('3', '12'),
+('4', '5'),
+('4', '6'),
+('4', '7'),
+('4', '8'),
+('4', '9'),
+('4', '10'),
+('5', '3'),
+('5', '4'),
+('5', '5'),
+('5', '6'),
+('5', '7'),
+('5', '8'),
+('6', '9'),
+('6', '10'),
+('6', '11'),
+('6', '12'),
+('7', '3'),
+('7', '4'),
+('7', '5'),
+('7', '6'),
+('7', '7'),
+('8', '2'),
+('8', '3'),
+('9', '2'),
+('9', '3'),
+('9', '4'),
+('9', '5'),
+('10', '4'),
+('10', '5'),
+('10', '6'),
+('10', '7'),
+('11', '1'),
+('11', '2'),
+('11', '11'),
+('11', '12'),
+('12', '9'),
+('12', '10'),
+('12', '11'),
+('13', '1'),
+('13', '2'),
+('13', '3');
 
 -- --------------------------------------------------------
 
