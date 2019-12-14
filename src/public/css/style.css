@@ -1,12 +1,16 @@
-body{
-    padding-top: 100px;
-}
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.container-page {
+    padding-top: 185px;
+}
+
+#container-map {
+    display: none;
 }
 
 h1{
@@ -31,6 +35,7 @@ h2{
     justify-content: center;
     font-size: 2em;
     font-family: monospace;
+    height: 185px;
 }
 
 .title{
@@ -63,9 +68,9 @@ h2{
 
 .form-body
 {
-  
+
   width: 70px;
-  
+
 }
 /*POPUP
 #popup {

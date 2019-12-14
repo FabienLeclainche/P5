@@ -19,12 +19,6 @@ class BackendController
         include_once __DIR__ . '/../view/admin/home.php';
     }
 
-    public function deleteCustomerAction($id)
-    {
-        $this->customerDao->delete($id);
-        header('Location: /admin');
-    }
-
     public function logout()
     {
         setcookie('p5_authentification', 'p5_authentification', time() - 3600);

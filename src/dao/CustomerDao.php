@@ -22,12 +22,15 @@ class CustomerDao extends BaseDao
         return $customers;
     }
 
-    public function createcustomer($prenom, $nom, $email)
+    public function createcustomer($prenom, $nom, $email, $budget, $niveau, $saison)
     {
-        $statement = $this->bd->prepare("INSERT INTO customers(prenom,nom,email) VALUES(:prenom, :nom, :email");
+        $statement = $this->bd->prepare("INSERT INTO customers(prenom, nom, email, budget, niveau, saison) VALUES(:prenom, :nom, :email, :budget, :niveau, :saison)");
         $statement->bindParam(':prenom', $prenom);
         $statement->bindParam(':nom', $nom);
         $statement->bindParam(':email', $email);
+        $statement->bindParam(':budget', $budget);
+        $statement->bindParam(':niveau', $niveau);
+        $statement->bindParam(':saison', $saison);
         $statement->execute();
     }
 

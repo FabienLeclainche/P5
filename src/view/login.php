@@ -28,26 +28,28 @@
 </header>
 <body>
 
-<div class="container">
-    <form class="login form" action="/admin" method="post">
-        <div class="form-group">
-            <label>Login:</label>
-            <input type="text" name="login" class="form-control" required/>
-        </div>
-        <div class="form-group">
-            <label>Mot de passe:</label>
-            <input type="password" name="password" class="form-control" required/>
-        </div>
-        <input class="button" type="submit" value="Connexion" />
+<div class="container-page">
+    <div class="container">
+        <form class="login form" action="/login" method="post">
+            <div class="form-group">
+                <label>Login:</label>
+                <input type="text" name="login" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe:</label>
+                <input type="password" name="password" class="form-control" required/>
+            </div>
+            <input class="button" type="submit" value="Connexion"/>
 
-    </form>
+        </form>
+    </div>
+    <br>
+    <footer>
+        <p><a href="http://voyagesetsurf.com/"> 2019 Voyages et Surf</a> -
+            <a href="/login">Espace Administrateur</a>
+        </p>
+    </footer>
 </div>
-<br>
-<footer>
-    <p><a href="http://voyagesetsurf.com/"> 2019 Voyages et Surf</a> -
-        <a href="/login">Espace Administrateur</a>
-    </p>
-</footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

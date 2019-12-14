@@ -1,10 +1,10 @@
 class Carte {
   constructor(markers) {
     this.markers = markers;
-    console.log(this.markers)
+    $('#container-map').show();
     this.map = L.map("map", {
       center: [-8.80507876834652, 115.11340369779452],
-      zoom: 3,
+      zoom: 2,
       gestureHandling: true,
     });
 
@@ -12,26 +12,28 @@ class Carte {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
+
     this.initMarkers();
   }
 
   initMarkers() {
-    const data = $.getJSON('/api/get-destinations')
-    data.then((d) => {
-      for (let i = 0; i < d.length; i++) {
-        L.marker([d[i].position.lat, d[i].position.lng], {icon: this.colorMarker(d[i])})
-          .addTo(this.map);
-      }
-    }, (err) => {
-      console.log(err)
-    })
+    if (this.markerLayer) {
+      this.markerLayer.clearLayers();
+    }
+    this.markerLayer = L.layerGroup();
+    for (let i = 0; i < this.markers.length; i++) {
+      L.marker([this.markers[i].position.lat, this.markers[i].position.lng], {icon: this.colorMarker()})
+        .addTo(this.markerLayer);
+    }
+    this.map.addLayer(this.markerLayer)
+
   }
 
-  colorMarker(markers) {
-        return L.icon({
-        iconUrl: '/public/images/icon.png',
-        iconSize: [38, 50],
-      });
+  colorMarker() {
+    return L.icon({
+      iconUrl: '/public/images/icon.png',
+      iconSize: [38, 50],
+    });
   }
 }
 

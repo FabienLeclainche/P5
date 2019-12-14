@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Dao\CustomerDao;
 use App\Dao\FormDao;
 use App\Dao\UserDao;
-use App\Dao\CustomerDao;
+use Firebase\JWT\JWT;
 
 class FrontendController
 {
@@ -29,12 +30,6 @@ class FrontendController
         include_once __DIR__ . '/../view/home.php';
     }
 
-    public function createCustomerAction($prenom, $nom, $email)
-    {
-        $this->customerDao->createcustomer($prenom, $nom, $email);
-        header('Location:/');
-    }
-    
     public function login()
     {
         include_once __DIR__ . '/../view/login.php';
@@ -45,16 +40,21 @@ class FrontendController
         $user = $this->userDao->findByLogin($login);
         $userId = $user->getId();
         if (!isset($userId)) {
-            header('Location: ?action=login&err=login_error');
+            header('Location: /login?err=login_error');
             die();
         }
         if (!password_verify($password, $user->getPassword())) {
-            header('Location: ?action=login&err=password_error');
+            header('Location: /login?err=password_error');
             die();
         }
 
-        setcookie('p5_authentification', 'p5_authentification', time() + 3600);
-        header('Location: ?action=admin');
+        $env = parse_ini_file(getcwd() . '/env');
+        $token = JWT::encode([
+            'user_id' => $userId,
+            "exp" => time() + 3600,
+        ], $env['jwt_token']);
+        setcookie('p5_authentification', $token);
+        header('Location: /admin');
         die();
     }
 }

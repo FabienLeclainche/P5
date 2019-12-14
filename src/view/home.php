@@ -31,121 +31,131 @@
         </nav>
     </div>
 </header>
+<div class="container-page">
 
-<div class="container">
-    <div class="row">
-        <!-- Contient l'image et la description -->
-        <div class="carousel-inner">
-            <img class="img-fluid" src="/public/images/slider1.jpg" alt="First slide">
-            <!-- Description slider 1 -->
-            <div class="carousel-caption">
-                <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>
-                <p class="style_texte">Rempli le formulaire et découvre la destination surf faite pour toi !</p>
+    <div class="container">
+        <div class="row">
+            <!-- Contient l'image et la description -->
+            <div class="carousel-inner">
+                <img class="img-fluid" src="/public/images/slider1.jpg" alt="First slide">
+                <!-- Description slider 1 -->
+                <div class="carousel-caption">
+                    <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>
+                    <p class="style_texte">Rempli le formulaire et découvre la destination surf faite pour toi !</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
+    <div class="container">
 
-    <h2>Formulaire</h2>
+        <h2>Formulaire</h2>
 
+        <br>
+        <form action="" method="post" enctype="text/plain">
+            <label>Budget:
+                <?php
+                foreach ($budgets as $budget) { ?>
+                    <div class="form-group">
+                        <input  id="budget-<?= $budget->getId() ?>" type="radio"  name="budget"
+                               value="<?= $budget->getId() ?>"required>
+                        <label for="budget-<?= $budget->getId() ?>"
+                               class="budget"><?php echo $budget->getValeur(); ?></label>
+                    </div>
+                <?php } ?>
+                <br>
+            </label>
+            <br>
+            <label>Niveau:
+                <br>
+                <?php
+                foreach ($niveaux as $niveau) { ?>
+                    <div class="form-group">
+                        <input id="niveau-<?= $niveau->getId() ?>" type="radio" name="niveau"
+                               value="<?= $niveau->getId() ?>"required>
+                        <label for="niveau-<?= $niveau->getId() ?>"
+                               class="niveau"><?php echo $niveau->getValeur() ?></label>
+                    </div>
+                <?php } ?>
+                <br>
+            </label>
+            <br>
+            <label>Saison:
+                <?php
+                foreach ($saisons as $saison) {
+                    ?>
+                    <div class="form-group">
+                        <input id="saison-<?= $saison->getId() ?>" type="radio" name="saison"
+                               value="<?= $saison->getId() ?>"required>
+                        <label for="saison-<?= $saison->getId() ?>"
+                               class="saison"><?php echo $saison->getMois(); ?></label>
+                    </div>
+                    <?php
+                }
+                ?>
+                <br>
+            </label>
+            <br>
+            <button type="button" value="BouttonSubmit" data-toggle="modal" data-target="#subscribeCustomer"
+                    name="expedier email"><a href="javascript:showPopup();" title="Montrer le popup">Voir la
+                    destination</a>
+            </button>
+        </form>
+    </div>
     <br>
-    <form action="" method="post" enctype="text/plain">
-        <label>Budget:
-            <br>
-            <input type="radio" name="nom_variable_1" value="choix1">
-            <?php
-            foreach ($budgets as $budget) {
-                ?>
-                <div class="budget"><?php echo $budget->getValeur(); ?></div>
-                <?php
-            }
-            ?>
-            <br>
-        </label>
-        <br>
-        <label>Niveau:
-            <br>
-            <input type="radio" name="nom_variable_1" value="choix1">
-            <?php
-            foreach ($niveaux as $niveau) {
-                ?>
-                <div class="niveau"><?php echo $niveau->getValeur([$niveaux=1])?></div>
-                <?php
-            }
-            ?>
-            <br>
-        </label>
-        <br>
-        <label>Saison:
-            <br>
-            <input type="radio" name="nom_variable_1" value="choix1">
-            <?php
-            foreach ($saisons as $saison) {
-                ?>
-                <div class="saison"><?php echo $saison->getMois(); ?></div>
-                <?php
-            }
-            ?>
-            <br>
-        </label>
-        <br>
-        <button type="button" value="BouttonSubmit"data-toggle="modal" data-target="#subscribeCustomer" name="expedier email"><a href="javascript:showPopup();" title="Montrer le popup">Voir la destination</a>
-        </button>
-    </form>
-</div>
-<br>
 
-<div class="modal fade" id="subscribeCustomer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+    <div class="modal fade" id="subscribeCustomer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel">Inscris toi pour voir le résultat</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/createcustomeraction" method="POST">
-                    <div>
-                        <label class="form-body" for="prenom">Prénom :</label>
-                        <input type="text" id="prenom" name="prenom">
+                    <h5 class="modal-title" id="exampleModalLabel">Inscris toi pour voir le résultat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="create-customer" action="#" method="POST">
+                    <div class="modal-body">
+                        <div>
+                            <label class="form-body" for="prenom">Prénom :</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+
+                        <div>
+                            <label class="form-body" for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+
+                        <div>
+                            <label class="form-body" for="email">E-mail :</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+
                     </div>
-
-                    <div>
-                        <label class="form-body" for="nom">Nom:</label>
-                        <input type="text" id="nom" name="nom">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-primary" >Voir le résultat</button>
                     </div>
-
-                    <div>
-                        <label class="form-body" for="email">E-mail :</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    
-                
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary">Voir le résultat</button>
-            </div>
-            </form>
         </div>
     </div>
+
+    <div id="container-map" class="container">
+        <h2>Voici les destinations surf faites pour toi</h2>
+        <div id="map"></div>
+
+    </div>
+
+    <footer>
+        <p><a href="http://voyagesetsurf.com/"> 2019 Voyages et Surf</a> -
+            <a href="/admin">Espace Administrateur</a>
+        </p>
+    </footer>
 </div>
 
-<div class="container">
-    <h2>Voici les destinations surf faites pour toi</h2>
-    <div id="map"></div>
- 
-</div>
-
-<footer>
-    <p><a href="http://voyagesetsurf.com/"> 2019 Voyages et Surf</a> -
-        <a href="/login">Espace Administrateur</a>
-    </p>
-</footer>
 
 <script src="/public/js/lib/jquery.min.js"></script>
 <script src="/public/bootstrap/js/bootstrap.min.js"></script>
