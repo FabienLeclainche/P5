@@ -2,19 +2,12 @@
 
 namespace App\Dao;
 
-/*require_once 'dao/BaseDao.php';
-require_once 'model/Budget.php';
-require_once 'model/Niveau.php';
-require_once 'model/Saison.php';
-require_once 'model/Spot.php';*/
-
 use App\Model\Budget;
 use App\Model\Niveau;
 use App\Model\Saison;
 
 class FormDao extends BaseDao
 {
-
     public function findbudget()
     {
         $req = $this->bd->query('SELECT * FROM budgets');

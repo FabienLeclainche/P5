@@ -8,6 +8,7 @@
     <link href="/public/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/leaflet.css">
     <link rel="stylesheet" href="/public/css/leaflet-gesture-handling.min.css">
+    <link rel="icon" type="image/png" href="/public/images/icon.png" />
     <title>Ta Destination Surf</title>
 </head>
 
@@ -19,39 +20,37 @@
             <div class="title col-lg-6">
                 <a href="http://voyagesetsurf.com/"><img class="img-fluid" src="/public/images/logo.png" alt="logo"></a>
             </div>
-            <div class="dropdown col-lg-6 ">
+            <div class="dropdown col-lg-6 col-xs-1">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                     Menu
                 </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/">Accueil</a>
 
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item" href="/">Accueil</a>
                 </div>
             </div>
         </nav>
     </div>
 </header>
-<div class="container-page">
 
+<div class="container-page">
     <div class="container">
         <div class="row">
             <!-- Contient l'image et la description -->
             <div class="carousel-inner">
-                <img class="img-fluid" src="/public/images/slider1.jpg" alt="First slide">
+                <img class="img-fluid-1" src="/public/images/slider1.jpg" alt="First slide">
                 <!-- Description slider 1 -->
                 <div class="carousel-caption">
-                    <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>
-                    <p class="style_texte">Rempli le formulaire et découvre la destination surf faite pour toi !</p>
+                    <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>                 
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-
-        <h2>Formulaire</h2>
-
-        <br>
+        <h2>Rempli le formulaire et découvre la destination surf faite pour toi !</h2>
+        
         <form action="" method="post" enctype="text/plain">
             <label>Budget:
                 <?php
@@ -118,17 +117,17 @@
                 <form id="create-customer" action="#" method="POST">
                     <div class="modal-body">
                         <div>
-                            <label class="form-body" for="prenom">Prénom :</label>
+                            <label class="form-body" for="prenom">Prénom *:</label>
                             <input type="text" id="prenom" name="prenom" required>
                         </div>
 
                         <div>
-                            <label class="form-body" for="nom">Nom:</label>
+                            <label class="form-body" for="nom">Nom *:</label>
                             <input type="text" id="nom" name="nom" required>
                         </div>
 
                         <div>
-                            <label class="form-body" for="email">E-mail :</label>
+                            <label class="form-body" for="email">E-mail *:</label>
                             <input type="email" id="email" name="email" required>
                         </div>
 

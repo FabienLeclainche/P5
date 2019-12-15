@@ -6,23 +6,25 @@
 }
 
 .container-page {
-    padding-top: 185px;
+  padding-top: 120px;
 }
 
 #container-map {
     display: none;
 }
 
-h1{
-    padding:30px;
-}
-
 h2{
     padding:20px;
+    text-align: center;
 }
 
+.img-fluid {
+     max-width: 80%;
+}
 
-
+.img-fluid-1{
+     max-width: 100%;
+}
 .navbar{
     position: fixed;
     top:0;
@@ -34,16 +36,20 @@ h2{
     align-content: center;
     justify-content: center;
     font-size: 2em;
-    font-family: monospace;
-    height: 185px;
+    font-family: monospace;    
 }
 
-.title{
+.title {
     text-align: center;
 }
 
-.dropdown{
-   text-align: center;
+.dropdown {
+   text-align: center;   
+}
+
+.dropdown-menu {
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 .carousel-inner {
@@ -60,22 +66,31 @@ h2{
 
 .style_title {
     font-size: 2.5em;
-}
-
-.style_texte {
-    font-size: 1.2em;
+    color: #FF6418;
 }
 
 .form-body
 {
-
   width: 70px;
-
 }
-/*POPUP
-#popup {
-  display: none;
-}*/
+
+.form-group
+{
+  margin-bottom: 0px;
+}
+
+label {   
+    margin-bottom: 0rem;
+}
+
+#map {
+    width: 100%;
+    min-height: 500px;
+}
+
+.btn-nav{
+  padding-top: 100px;
+}
 
 footer {
     height: 50px;
@@ -84,23 +99,22 @@ footer {
 }
 
 @media screen and (min-width: 200px) and (max-width: 992px) {
- .style_texte {
-    display: none;
-    }
-      .title{
+  .title{
       font-size: 0.5em;
-}
+  }
+  .container-page {
+      padding-top: 150px;
+  }
 }
 
 @media (max-width: 768px) {
   .style_title {
     font-size: 1.5em;
-     position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-}
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (min-width: 768px) {
@@ -114,14 +128,10 @@ footer {
     width: 970px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
-
 }
 
-#map {
-    width: 100%;
-    min-height: 500px;
-}

@@ -25,8 +25,6 @@ class FrontendController
         $budgets = $this->formDao->findbudget();
         $niveaux = $this->formDao->findniveau();
         $saisons = $this->formDao->findsaison();
-
-
         include_once __DIR__ . '/../view/home.php';
     }
 

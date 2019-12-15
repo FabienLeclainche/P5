@@ -4,14 +4,13 @@ class Carte {
     $('#container-map').show();
     this.map = L.map("map", {
       center: [-8.80507876834652, 115.11340369779452],
-      zoom: 2,
+      zoom: 1,
       gestureHandling: true,
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-
 
     this.initMarkers();
   }
@@ -25,6 +24,7 @@ class Carte {
       L.marker([this.markers[i].position.lat, this.markers[i].position.lng], {icon: this.colorMarker()})
         .addTo(this.markerLayer);
     }
+   //marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
     this.map.addLayer(this.markerLayer)
 
   }
@@ -35,5 +35,13 @@ class Carte {
       iconSize: [38, 50],
     });
   }
+
+  /*onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+    this.map.on('click', onMapClick);
+}*/
+
 }
+
+
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/public/images/icon.png" />
     <title>Login</title>
 </head>
 <header>
@@ -20,7 +21,6 @@
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/">Accueil</a>
-
                 </div>
             </div>
         </nav>
@@ -30,6 +30,7 @@
 
 <div class="container-page">
     <div class="container">
+        <br>
         <form class="login form" action="/login" method="post">
             <div class="form-group">
                 <label>Login:</label>
@@ -39,7 +40,8 @@
                 <label>Mot de passe:</label>
                 <input type="password" name="password" class="form-control" required/>
             </div>
-            <input class="button" type="submit" value="Connexion"/>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Connexion"/>
 
         </form>
     </div>
@@ -51,9 +53,10 @@
     </footer>
 </div>
 
-
+<script src="/public/js/lib/jquery.min.js"></script>
+<script src="/public/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/public.bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 

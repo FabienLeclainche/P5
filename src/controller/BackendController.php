@@ -22,7 +22,7 @@ class BackendController
     public function logout()
     {
         setcookie('p5_authentification', 'p5_authentification', time() - 3600);
-        header('Location: /login');
+        include_once __DIR__ . '/../view/login.php';
     }
 
 

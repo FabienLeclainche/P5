@@ -5,17 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/public/images/icon.png" />
     <title>Admin</title>
+
 </head>
 <body>
 
+    
+    <nav>
+        <div class="btn-nav">
+        <a class="btn btn-primary m-4" href="/logout">Se déconnecter</a>
+        <a class="btn btn-primary" href="/">Accueil</a>
+        </div>
+    </nav>
+
 
 <div class="container-page">
-    <nav>
-        <a class="btn btn-primary" href="/logout">Se déconnecter</a>
-        <a class="btn btn-primary" href="/">Accueil</a>
-
-    </nav>
 
     <div class="container">
 
