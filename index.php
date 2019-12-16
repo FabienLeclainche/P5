@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-
+/*require_once 'controller/FrontendController.php';
+require_once 'controller/BackendController.php';*/
 use App\Controller\ApiController;
 use App\Controller\BackendController;
 use App\Controller\FrontendController;
