@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/public/images/icon.png" />
     <title>Login</title>
 </head>
+<body>
 <header>
     <div class="row">
         <nav class="navbar">
@@ -26,7 +27,7 @@
         </nav>
     </div>
 </header>
-<body>
+
 
 <div class="container-page">
     <div class="container">

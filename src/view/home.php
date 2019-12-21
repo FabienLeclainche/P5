@@ -8,7 +8,6 @@
     <link href="/public/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/leaflet.css">
     <link rel="stylesheet" href="/public/css/leaflet-gesture-handling.min.css">
-    <link rel="icon" type="image/png" href="/public/images/icon.png" />
     <title>Ta Destination Surf</title>
 </head>
 
@@ -20,72 +19,74 @@
             <div class="title col-lg-6">
                 <a href="http://voyagesetsurf.com/"><img class="img-fluid" src="/public/images/logo.png" alt="logo"></a>
             </div>
-            <div class="dropdown col-lg-6 col-xs-1">
+            <div class="dropdown col-lg-6 ">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                     Menu
                 </button>
-
                 <div class="dropdown-menu">
-
                     <a class="dropdown-item" href="/">Accueil</a>
+
                 </div>
             </div>
         </nav>
     </div>
 </header>
-
 <div class="container-page">
+
     <div class="container">
         <div class="row">
-            <!-- Contient l'image et la description -->
+         
             <div class="carousel-inner">
-                <img class="img-fluid-1" src="/public/images/slider1.jpg" alt="First slide">
+                <img class="img-fluid" src="/public/images/slider1.jpg" alt="Surf">
                 <!-- Description slider 1 -->
                 <div class="carousel-caption">
-                    <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>                 
+                    <h1 class="style_title">Bienvenue sur le blog de Voyages et Surf !</h1>
+                    
                 </div>
             </div>
         </div>
     </div>
 
+    <h2>Rempli le formulaire et découvre la destination surf faite pour toi !</h2>
+
     <div class="container">
-        <h2>Rempli le formulaire et découvre la destination surf faite pour toi !</h2>
-        
-        <form action="" method="post" enctype="text/plain">
-            <label>Budget:
+
+        <br>
+        <form action="#" method="post" enctype="text/plain">
+            <div>Budget:
                 <?php
                 foreach ($budgets as $budget) { ?>
                     <div class="form-group">
-                        <input  id="budget-<?= $budget->getId() ?>" type="radio"  name="budget"
-                               value="<?= $budget->getId() ?>"required>
+                        <input id="budget-<?= $budget->getId() ?>" type="radio" name="budget"
+                               value="<?= $budget->getId() ?>">
                         <label for="budget-<?= $budget->getId() ?>"
                                class="budget"><?php echo $budget->getValeur(); ?></label>
                     </div>
                 <?php } ?>
                 <br>
-            </label>
+            </div>
             <br>
-            <label>Niveau:
+            <div>Niveau:
                 <br>
                 <?php
                 foreach ($niveaux as $niveau) { ?>
                     <div class="form-group">
                         <input id="niveau-<?= $niveau->getId() ?>" type="radio" name="niveau"
-                               value="<?= $niveau->getId() ?>"required>
+                               value="<?= $niveau->getId() ?>">
                         <label for="niveau-<?= $niveau->getId() ?>"
                                class="niveau"><?php echo $niveau->getValeur() ?></label>
                     </div>
                 <?php } ?>
                 <br>
-            </label>
+            </div>
             <br>
-            <label>Saison:
+            <div>Saison:
                 <?php
                 foreach ($saisons as $saison) {
                     ?>
                     <div class="form-group">
                         <input id="saison-<?= $saison->getId() ?>" type="radio" name="saison"
-                               value="<?= $saison->getId() ?>"required>
+                               value="<?= $saison->getId() ?>">
                         <label for="saison-<?= $saison->getId() ?>"
                                class="saison"><?php echo $saison->getMois(); ?></label>
                     </div>
@@ -93,12 +94,12 @@
                 }
                 ?>
                 <br>
-            </label>
+            </div>
             <br>
-            <button type="button" value="BouttonSubmit" data-toggle="modal" data-target="#subscribeCustomer"
-                    name="expedier email"><a href="javascript:showPopup();" title="Montrer le popup">Voir la
+            <div id="popup"  data-toggle="modal" data-target="#subscribeCustomer"
+                    ><a href="javascript:showPopup();" title="Voir la destination">Voir la
                     destination</a>
-            </button>
+            </div>
         </form>
     </div>
     <br>
@@ -135,7 +136,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-primary" >Voir le résultat</button>
+                        <button type="submit" class="btn btn-primary">Voir le résultat</button>
                     </div>
                 </form>
             </div>

@@ -24,7 +24,7 @@ class Carte {
       L.marker([this.markers[i].position.lat, this.markers[i].position.lng], {icon: this.colorMarker()})
         .addTo(this.markerLayer);
     }
-   //marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+ 
     this.map.addLayer(this.markerLayer)
 
   }
@@ -35,11 +35,6 @@ class Carte {
       iconSize: [38, 50],
     });
   }
-
-  /*onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
-    this.map.on('click', onMapClick);
-}*/
 
 }
 

@@ -82,6 +82,20 @@ h2{
 label {   
     margin-bottom: 0rem;
 }
+#popup {
+  border:none;
+  padding:6px;
+  border-radius:8px;
+  background:#0069D9;
+  font:bold 13px Arial;
+  color:#FFFFFF;
+  width:150px; 
+  text-align: center;
+}
+
+#popup a{
+  color:#FFFFFF; 
+}
 
 #map {
     width: 100%;

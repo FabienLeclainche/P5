@@ -35,16 +35,7 @@ window.addEventListener('load', function () {
     })
   })
 
-  /* A la validation du formulaire d'inscription
-  Pour plus tard
-   */
-  /*$.post('/api/subscribe-customer', formData).then((resp) => {
-    return $.getJSON('/api/get-destinations')
-  }).then((markers) => {
-  //CARTE
-  const carte = new Carte(markers);
-})*/
-
+ 
 });
 
 
